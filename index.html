@@ -1,1 +1,8 @@
-<script>window.location.replace("healthnation://feed/profiles/support-healthnation");</script>
+<script>
+  var params = new URL(window.location).searchParams;
+  var pathElements = [];
+  params.forEach(p => pathElements.push(p));
+  var path = pathElements.join("/");
+  var hnLink = `healthnation://${path}`;
+  window.location.replace(hnLink);
+</script>
